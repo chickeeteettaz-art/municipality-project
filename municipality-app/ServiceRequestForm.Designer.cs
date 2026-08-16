@@ -183,9 +183,10 @@
             submitButton.MouseState = MaterialSkin.MouseState.HOVER;
             submitButton.Name = "submitButton";
             submitButton.NoAccentTextColor = Color.Empty;
-            submitButton.Size = new Size(146, 36);
+            submitButton.Padding = new Padding(100, 0, 100, 0);
+            submitButton.Size = new Size(103, 36);
             submitButton.TabIndex = 7;
-            submitButton.Text = "Submit Issue";
+            submitButton.Text = "Submit";
             submitButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             submitButton.UseAccentColor = false;
             submitButton.UseVisualStyleBackColor = true;
