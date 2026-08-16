@@ -24,11 +24,12 @@ Notable code elements (from the repository)
 - File uploads: ServiceRequestForm copies selected files to Path.Combine(Application.StartupPath, "Uploads").
 
 ## Project layout (top-level)
+```
 .muni-class-library/         C# class library with domain models (IssueReport)
 municipality-app/            WinForms application (Program.cs, Form1, ServiceRequestForm, AnnouncementWindow, resources)
 municipality-app.slnx        Solution file (open in Visual Studio)
 README.md                    (this file)
-
+```
 
 ## How to build and run
 
@@ -79,3 +80,13 @@ Notes:
 - Open an issue or submit a PR to add persistence, complete the announcements/events feature, or improve UX and error handling.
 - If adding persistence, keep backward compatibility with the IssueReport model fields:
   - IssueId, Title, Location, Description, FilePath, IssueCategory
+
+## License
+- Not specified in the repository. Add a LICENSE file to clarify usage terms.
+
+---
+
+If you want, I can:
+- Draft a quick design for persisting IssueReport items (JSON or SQLite) and show how to integrate it.
+- Add a simple announcements/events model and a minimal data-backed UI.
+- Create a CONTRIBUTING.md and a sample LICENSE file.
