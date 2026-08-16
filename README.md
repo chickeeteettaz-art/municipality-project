@@ -51,8 +51,8 @@ Notes:
 - Ensure MaterialSkin (NuGet) is available/installed; the code references MaterialSkin and MaterialSkin.Controls.
 - The class library project must be referenced by the WinForms project (the repository contains muni-class-library and municipality-app projects intended to be used together).
 
-## Usage notes / behavior observed in code
-- The Service Request form requires Location, Title, Description, Category, and a real file name to reach 100% progression. The UI:
+## Usage notes
+- The Issue Report form requires Location, Title, Description, Category, and a real file name to reach 100% progression. The UI:
   - Enables the upload button only once the Description is filled.
   - Copies uploaded files into an "Uploads" folder under the application's startup directory.
   - When the form reaches 100% on the progress bar, the Submit button is enabled and a success message is shown.
@@ -73,7 +73,7 @@ Notes:
 
 ## Limitations
 - No persistent storage for issue reports (only in-memory List<IssueReport>).
-- Announcements/events functionality is not fully implemented in the visible code path.
+- Announcements/events functionality is not fully implemented.
 - Uploads are saved locally; no server or remote storage integration is present.
 
 ## Contributing
