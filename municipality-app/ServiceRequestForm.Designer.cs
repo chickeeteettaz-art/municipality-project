@@ -64,6 +64,7 @@
             // 
             // titleTextBox
             // 
+            titleTextBox.Anchor = AnchorStyles.None;
             titleTextBox.AnimateReadOnly = false;
             titleTextBox.BorderStyle = BorderStyle.None;
             titleTextBox.Depth = 0;
@@ -82,6 +83,7 @@
             // 
             // serviceTypeComboBox
             // 
+            serviceTypeComboBox.Anchor = AnchorStyles.None;
             serviceTypeComboBox.AutoResize = false;
             serviceTypeComboBox.BackColor = Color.FromArgb(255, 255, 255);
             serviceTypeComboBox.Depth = 0;
@@ -105,6 +107,7 @@
             // 
             // descriptionTextBox
             // 
+            descriptionTextBox.Anchor = AnchorStyles.None;
             descriptionTextBox.BackColor = Color.FromArgb(255, 255, 255);
             descriptionTextBox.BorderStyle = BorderStyle.None;
             descriptionTextBox.Depth = 0;
@@ -120,7 +123,7 @@
             // 
             // materialLabel3
             // 
-            materialLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            materialLabel3.Anchor = AnchorStyles.None;
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -133,6 +136,7 @@
             // 
             // materialCard1
             // 
+            materialCard1.Anchor = AnchorStyles.None;
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
             materialCard1.Controls.Add(materialLabel4);
             materialCard1.Controls.Add(uploadFileButton);
@@ -173,6 +177,7 @@
             // 
             // submitButton
             // 
+            submitButton.Anchor = AnchorStyles.None;
             submitButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             submitButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             submitButton.Depth = 0;
@@ -194,6 +199,7 @@
             // 
             // fileNameLabel
             // 
+            fileNameLabel.Anchor = AnchorStyles.None;
             fileNameLabel.AutoSize = true;
             fileNameLabel.Depth = 0;
             fileNameLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -217,6 +223,7 @@
             // 
             // cancelButton
             // 
+            cancelButton.Anchor = AnchorStyles.None;
             cancelButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             cancelButton.BackColor = Color.LightCoral;
             cancelButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -239,6 +246,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(107, 336);
             pictureBox1.Name = "pictureBox1";
@@ -249,6 +257,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(107, 522);
             pictureBox2.Name = "pictureBox2";
@@ -259,6 +268,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(612, 306);
             pictureBox3.Name = "pictureBox3";
@@ -269,6 +279,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(391, 115);
             pictureBox4.Name = "pictureBox4";
@@ -279,6 +290,7 @@
             // 
             // reportingProgressBar
             // 
+            reportingProgressBar.Anchor = AnchorStyles.None;
             reportingProgressBar.Depth = 0;
             reportingProgressBar.ForeColor = SystemColors.MenuHighlight;
             reportingProgressBar.Location = new Point(247, 275);
@@ -289,6 +301,7 @@
             // 
             // materialLabel1
             // 
+            materialLabel1.Anchor = AnchorStyles.None;
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -301,6 +314,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Anchor = AnchorStyles.None;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(107, 428);
             pictureBox5.Name = "pictureBox5";
@@ -311,6 +325,7 @@
             // 
             // locationTextBox
             // 
+            locationTextBox.Anchor = AnchorStyles.None;
             locationTextBox.AnimateReadOnly = false;
             locationTextBox.BorderStyle = BorderStyle.None;
             locationTextBox.Depth = 0;
@@ -329,6 +344,7 @@
             // 
             // fileNameTxt
             // 
+            fileNameTxt.Anchor = AnchorStyles.None;
             fileNameTxt.AutoSize = true;
             fileNameTxt.Depth = 0;
             fileNameTxt.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -341,6 +357,7 @@
             // 
             // fileLabel
             // 
+            fileLabel.Anchor = AnchorStyles.None;
             fileLabel.AutoSize = true;
             fileLabel.Depth = 0;
             fileLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -355,6 +372,7 @@
             // 
             // materialCard2
             // 
+            materialCard2.Anchor = AnchorStyles.None;
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
             materialCard2.Controls.Add(pictureBox6);
             materialCard2.Depth = 0;

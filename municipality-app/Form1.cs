@@ -61,5 +61,10 @@ namespace municipality_app
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

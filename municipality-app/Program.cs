@@ -1,3 +1,5 @@
+using municipality_app.Views;
+
 namespace municipality_app
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace municipality_app
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new PetView());
         }
     }
 }

@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Presentations\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
 
