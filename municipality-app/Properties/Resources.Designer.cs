@@ -143,6 +143,16 @@ namespace municipality_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pexels_rahimegul_29057063 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-rahimegul-29057063", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_soufianlafnesh_34579400 {
             get {
                 object obj = ResourceManager.GetObject("pexels-soufianlafnesh-34579400", resourceCulture);
@@ -166,6 +176,16 @@ namespace municipality_app.Properties {
         internal static System.Drawing.Bitmap Screenshot_2026_08_09_124128 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2026-08-09 124128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2026_08_24_154722_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2026-08-24_154722-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

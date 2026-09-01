@@ -1,6 +1,6 @@
 ﻿namespace municipality_app
 {
-    partial class ServiceRequestForm
+    partial class IssueReportForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceRequestForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueReportForm));
             titleTextBox = new MaterialSkin.Controls.MaterialTextBox();
             serviceTypeComboBox = new MaterialSkin.Controls.MaterialComboBox();
             descriptionTextBox = new MaterialSkin.Controls.MaterialMultiLineTextBox();
@@ -52,6 +52,7 @@
             fileLabel = new MaterialSkin.Controls.MaterialLabel();
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
             pictureBox6 = new PictureBox();
+            pbxImage = new PictureBox();
             materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -60,10 +61,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxImage).BeginInit();
             SuspendLayout();
             // 
             // titleTextBox
             // 
+            titleTextBox.Anchor = AnchorStyles.None;
             titleTextBox.AnimateReadOnly = false;
             titleTextBox.BorderStyle = BorderStyle.None;
             titleTextBox.Depth = 0;
@@ -82,6 +85,7 @@
             // 
             // serviceTypeComboBox
             // 
+            serviceTypeComboBox.Anchor = AnchorStyles.None;
             serviceTypeComboBox.AutoResize = false;
             serviceTypeComboBox.BackColor = Color.FromArgb(255, 255, 255);
             serviceTypeComboBox.Depth = 0;
@@ -105,6 +109,7 @@
             // 
             // descriptionTextBox
             // 
+            descriptionTextBox.Anchor = AnchorStyles.None;
             descriptionTextBox.BackColor = Color.FromArgb(255, 255, 255);
             descriptionTextBox.BorderStyle = BorderStyle.None;
             descriptionTextBox.Depth = 0;
@@ -120,7 +125,7 @@
             // 
             // materialLabel3
             // 
-            materialLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            materialLabel3.Anchor = AnchorStyles.None;
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -133,6 +138,7 @@
             // 
             // materialCard1
             // 
+            materialCard1.Anchor = AnchorStyles.None;
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
             materialCard1.Controls.Add(materialLabel4);
             materialCard1.Controls.Add(uploadFileButton);
@@ -173,6 +179,7 @@
             // 
             // submitButton
             // 
+            submitButton.Anchor = AnchorStyles.None;
             submitButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             submitButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             submitButton.Depth = 0;
@@ -194,6 +201,7 @@
             // 
             // fileNameLabel
             // 
+            fileNameLabel.Anchor = AnchorStyles.None;
             fileNameLabel.AutoSize = true;
             fileNameLabel.Depth = 0;
             fileNameLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -217,6 +225,7 @@
             // 
             // cancelButton
             // 
+            cancelButton.Anchor = AnchorStyles.None;
             cancelButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             cancelButton.BackColor = Color.LightCoral;
             cancelButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -239,6 +248,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(107, 336);
             pictureBox1.Name = "pictureBox1";
@@ -249,6 +259,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(107, 522);
             pictureBox2.Name = "pictureBox2";
@@ -259,6 +270,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(612, 306);
             pictureBox3.Name = "pictureBox3";
@@ -269,6 +281,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(391, 115);
             pictureBox4.Name = "pictureBox4";
@@ -279,6 +292,7 @@
             // 
             // reportingProgressBar
             // 
+            reportingProgressBar.Anchor = AnchorStyles.None;
             reportingProgressBar.Depth = 0;
             reportingProgressBar.ForeColor = SystemColors.MenuHighlight;
             reportingProgressBar.Location = new Point(247, 275);
@@ -289,6 +303,7 @@
             // 
             // materialLabel1
             // 
+            materialLabel1.Anchor = AnchorStyles.None;
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -301,6 +316,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Anchor = AnchorStyles.None;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(107, 428);
             pictureBox5.Name = "pictureBox5";
@@ -311,6 +327,7 @@
             // 
             // locationTextBox
             // 
+            locationTextBox.Anchor = AnchorStyles.None;
             locationTextBox.AnimateReadOnly = false;
             locationTextBox.BorderStyle = BorderStyle.None;
             locationTextBox.Depth = 0;
@@ -329,6 +346,7 @@
             // 
             // fileNameTxt
             // 
+            fileNameTxt.Anchor = AnchorStyles.None;
             fileNameTxt.AutoSize = true;
             fileNameTxt.Depth = 0;
             fileNameTxt.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -341,6 +359,7 @@
             // 
             // fileLabel
             // 
+            fileLabel.Anchor = AnchorStyles.None;
             fileLabel.AutoSize = true;
             fileLabel.Depth = 0;
             fileLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -355,6 +374,7 @@
             // 
             // materialCard2
             // 
+            materialCard2.Anchor = AnchorStyles.None;
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
             materialCard2.Controls.Add(pictureBox6);
             materialCard2.Depth = 0;
@@ -377,13 +397,22 @@
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
             // 
-            // ServiceRequestForm
+            // pbxImage
+            // 
+            pbxImage.Location = new Point(20, 599);
+            pbxImage.Name = "pbxImage";
+            pbxImage.Size = new Size(167, 167);
+            pbxImage.TabIndex = 22;
+            pbxImage.TabStop = false;
+            // 
+            // IssueReportForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.img_background;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1100, 923);
+            Controls.Add(pbxImage);
             Controls.Add(materialCard2);
             Controls.Add(pictureBox4);
             Controls.Add(fileLabel);
@@ -406,7 +435,7 @@
             Controls.Add(titleTextBox);
             DrawerBackgroundWithAccent = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "ServiceRequestForm";
+            Name = "IssueReportForm";
             Sizable = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Service Request Form";
@@ -420,6 +449,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             materialCard2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -448,5 +478,6 @@
         private MaterialSkin.Controls.MaterialLabel fileLabel;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private PictureBox pictureBox6;
+        private PictureBox pbxImage;
     }
 }

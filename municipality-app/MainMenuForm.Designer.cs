@@ -1,6 +1,6 @@
 ﻿namespace municipality_app
 {
-    partial class Form1
+    partial class MainMenuForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             imageList1 = new ImageList(components);
             materialCard4 = new MaterialSkin.Controls.MaterialCard();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
@@ -68,6 +68,7 @@
             // 
             // materialCard4
             // 
+            materialCard4.Anchor = AnchorStyles.None;
             materialCard4.BackColor = Color.FromArgb(255, 255, 255);
             materialCard4.Controls.Add(materialButton1);
             materialCard4.Controls.Add(label7);
@@ -125,6 +126,7 @@
             // 
             // materialCard1
             // 
+            materialCard1.Anchor = AnchorStyles.None;
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
             materialCard1.Controls.Add(materialButton2);
             materialCard1.Controls.Add(label1);
@@ -181,6 +183,7 @@
             // 
             // materialCard5
             // 
+            materialCard5.Anchor = AnchorStyles.None;
             materialCard5.BackColor = Color.FromArgb(255, 255, 255);
             materialCard5.Controls.Add(materialButton3);
             materialCard5.Controls.Add(label2);
@@ -237,6 +240,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(316, 220);
             pictureBox4.Name = "pictureBox4";
@@ -248,6 +252,7 @@
             // 
             // materialCard2
             // 
+            materialCard2.Anchor = AnchorStyles.None;
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
             materialCard2.Controls.Add(pictureBox5);
             materialCard2.Depth = 0;

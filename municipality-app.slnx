@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="muni-class-library/muni-class-library.csproj" Id="2509096a-7770-4eb6-872f-fe272bb8a783" />
   <Project Path="municipality-app/municipality-app.csproj" />
+  <Project Path="storage-api/storage-api.csproj" Id="d9991907-c109-45c1-838a-ef13a3636d65" />
 </Solution>
