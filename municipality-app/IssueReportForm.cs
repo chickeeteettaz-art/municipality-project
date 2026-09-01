@@ -110,6 +110,8 @@ namespace municipality_app
             uploadFileButton.Enabled = false;
             serviceTypeComboBox.Text = string.Empty;
             fileNameTxt.Text = "file.ex";
+            pbxImage.Image = null;
+            reportingProgressBar.Value = 20;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -121,44 +123,120 @@ namespace municipality_app
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "All files (*.*)|*.*";
+                // Only allow supported file types
+                openFileDialog.Filter =
+                    "Supported Files (*.doc;*.docx;*.txt;*.pdf;*.png;*.jpg;*.jpeg)|" +
+                    "*.doc;*.docx;*.txt;*.pdf;*.png;*.jpg;*.jpeg";
+
                 openFileDialog.Title = "Select a file to upload";
+                openFileDialog.Multiselect = false;
 
                 if (openFileDialog.ShowDialog() != DialogResult.OK)
                     return;
 
                 string sourcePath = openFileDialog.FileName;
-                string destinationFolder = Path.Combine(Application.StartupPath, "Uploads");
+
+                // Double-check the extension
+                string extension = Path.GetExtension(sourcePath).ToLowerInvariant();
+
+                string[] allowedExtensions =
+                {
+                    ".doc",
+                    ".docx",
+                    ".txt",
+                    ".pdf",
+                    ".png",
+                    ".jpg",
+                    ".jpeg"
+                };
+
+                if (!allowedExtensions.Contains(extension))
+                {
+                    MessageBox.Show(
+                        "Invalid file type. Please select a DOC, DOCX, TXT, PDF, PNG, JPG, or JPEG file.",
+                        "Invalid File",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                string destinationFolder = Path.Combine(
+                    Application.StartupPath,
+                    "Uploads");
 
                 try
                 {
                     Directory.CreateDirectory(destinationFolder);
 
                     string fileName = Path.GetFileName(sourcePath);
-                    string destinationPath = Path.Combine(destinationFolder, fileName);
+                    string destinationPath = Path.Combine(
+                        destinationFolder,
+                        fileName);
+
+                    // Copy the file
+                    File.Copy(
+                        sourcePath,
+                        destinationPath,
+                        overwrite: true);
 
                     // Update UI
                     fileNameTxt.Text = fileName;
                     fileLabel.Text = destinationPath;
 
-                    // Copy the file
-                    File.Copy(sourcePath, destinationPath, overwrite: true);
+                    // If the file is an image, display it
+                    if (extension == ".png" ||
+                        extension == ".jpg" ||
+                        extension == ".jpeg")
+                    {
+                        // Dispose the previous image to prevent memory leaks
+                        if (pbxImage.Image != null)
+                        {
+                            pbxImage.Image.Dispose();
+                            pbxImage.Image = null;
+                        }
 
-                    // Recalculate progress (this will add the 20% for the file)
+                        // Load a copy of the image so the file isn't locked
+                        using (FileStream stream = new FileStream(
+                            destinationPath,
+                            FileMode.Open,
+                            FileAccess.Read))
+                        {
+                            using (Image tempImage = Image.FromStream(stream))
+                            {
+                                pbxImage.Image = new Bitmap(tempImage);
+                            }
+                        }
+
+                        // Stretch the image to fit the PictureBox
+                        pbxImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    else
+                    {
+                        // Clear the PictureBox for non-image files
+                        if (pbxImage.Image != null)
+                        {
+                            pbxImage.Image.Dispose();
+                            pbxImage.Image = null;
+                        }
+                    }
+
+                    // Recalculate progress
                     UpdateProgressBar();
 
-                    MessageBox.Show($"File uploaded successfully to:\n{destinationPath}",
-                                    "Success",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
+                    MessageBox.Show(
+                        $"File uploaded successfully to:\n{destinationPath}",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error uploading file:\n{ex.Message}",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        $"Error uploading file:\n{ex.Message}",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
         }

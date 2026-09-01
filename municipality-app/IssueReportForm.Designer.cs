@@ -399,13 +399,13 @@
             // 
             // pbxImage
             // 
-            pbxImage.Location = new Point(48, 635);
+            pbxImage.Location = new Point(20, 599);
             pbxImage.Name = "pbxImage";
-            pbxImage.Size = new Size(125, 125);
+            pbxImage.Size = new Size(167, 167);
             pbxImage.TabIndex = 22;
             pbxImage.TabStop = false;
             // 
-            // ServiceRequestForm
+            // IssueReportForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -435,7 +435,7 @@
             Controls.Add(titleTextBox);
             DrawerBackgroundWithAccent = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "ServiceRequestForm";
+            Name = "IssueReportForm";
             Sizable = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Service Request Form";
