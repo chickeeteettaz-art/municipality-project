@@ -1,15 +1,14 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using muni_class_library;
-using System;
-using System.IO;                          // ← needed for Path, Directory, File
-using System.Windows.Forms;
+using municipality_app.Services;
 
 namespace municipality_app
 {
     public partial class IssueReportForm : MaterialForm
     {
        public List<IssueReport> issueReports = new List<IssueReport>();
+        public IssueStorageService reports = new IssueStorageService();
         public string filePath = "";
         public IssueReportForm()
         {
@@ -83,19 +82,21 @@ namespace municipality_app
             UpdateProgressBar();
         }
 
-        private void submitButton_Click(object sender, EventArgs e)
+        private async void submitButton_Click(object sender, EventArgs e)
         {
-            IssueReport issue = new IssueReport()
+           
+            IssueEntity issueEntity = new IssueEntity()
             {
-                IssueId = Guid.NewGuid().ToString(),
+                PartitionKey = "issues",
+                RowKey = Guid.NewGuid().ToString(),
                 Title = titleTextBox.Text,
                 Location = locationTextBox.Text,
                 Description = descriptionTextBox.Text,
                 FilePath = fileLabel.Text,
-                IssueCategory = serviceTypeComboBox.Text,
+                IssueCategory = serviceTypeComboBox.Text
             };
             
-            issueReports.Add(issue);
+            await reports.CreateIssueAsync(issueEntity);
 
             MessageBox.Show($"You have successfully submitted the form.",
                                     "Success",

@@ -10,6 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Presentations\**" />
+    <Compile Remove="Uploads\**" />
+    <EmbeddedResource Remove="Presentations\**" />
+    <EmbeddedResource Remove="Uploads\**" />
+    <None Remove="Presentations\**" />
+    <None Remove="Uploads\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
   </ItemGroup>
 
@@ -33,8 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Presentations\" />
-    <Folder Include="Uploads\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
