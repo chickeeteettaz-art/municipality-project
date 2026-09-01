@@ -103,6 +103,16 @@ namespace municipality_app.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap customer_care {
+            get {
+                object obj = ResourceManager.GetObject("customer-care", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customer_service {
             get {
                 object obj = ResourceManager.GetObject("customer-service", resourceCulture);
@@ -136,6 +146,16 @@ namespace municipality_app.Properties {
         internal static System.Drawing.Bitmap img_background {
             get {
                 object obj = ResourceManager.GetObject("img_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap megaphone {
+            get {
+                object obj = ResourceManager.GetObject("megaphone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
