@@ -7,10 +7,11 @@ using System.Windows.Forms;
 
 namespace municipality_app
 {
-    public partial class ServiceRequestForm : MaterialForm
+    public partial class IssueReportForm : MaterialForm
     {
        public List<IssueReport> issueReports = new List<IssueReport>();
-        public ServiceRequestForm()
+        public string filePath = "";
+        public IssueReportForm()
         {
             InitializeComponent();
 
@@ -150,6 +151,7 @@ namespace municipality_app
                                     "Success",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
+
                 }
                 catch (Exception ex)
                 {

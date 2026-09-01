@@ -1,6 +1,6 @@
 ﻿namespace municipality_app
 {
-    partial class ServiceRequestForm
+    partial class IssueReportForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceRequestForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueReportForm));
             titleTextBox = new MaterialSkin.Controls.MaterialTextBox();
             serviceTypeComboBox = new MaterialSkin.Controls.MaterialComboBox();
             descriptionTextBox = new MaterialSkin.Controls.MaterialMultiLineTextBox();
@@ -52,6 +52,7 @@
             fileLabel = new MaterialSkin.Controls.MaterialLabel();
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
             pictureBox6 = new PictureBox();
+            pbxImage = new PictureBox();
             materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxImage).BeginInit();
             SuspendLayout();
             // 
             // titleTextBox
@@ -395,6 +397,14 @@
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
             // 
+            // pbxImage
+            // 
+            pbxImage.Location = new Point(48, 635);
+            pbxImage.Name = "pbxImage";
+            pbxImage.Size = new Size(125, 125);
+            pbxImage.TabIndex = 22;
+            pbxImage.TabStop = false;
+            // 
             // ServiceRequestForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -402,6 +412,7 @@
             BackgroundImage = Properties.Resources.img_background;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1100, 923);
+            Controls.Add(pbxImage);
             Controls.Add(materialCard2);
             Controls.Add(pictureBox4);
             Controls.Add(fileLabel);
@@ -438,6 +449,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             materialCard2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -466,5 +478,6 @@
         private MaterialSkin.Controls.MaterialLabel fileLabel;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private PictureBox pictureBox6;
+        private PictureBox pbxImage;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace municipality_app
 {
-    partial class Form1
+    partial class MainMenuForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             imageList1 = new ImageList(components);
             materialCard4 = new MaterialSkin.Controls.MaterialCard();
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
