@@ -7,7 +7,7 @@ namespace municipality_app
 {
     public partial class IssueReportForm : MaterialForm
     {
-       public List<IssueReport> issueReports = new List<IssueReport>();
+        public List<IssueReport> issueReports = new List<IssueReport>();
         public IssueStorageService reports = new IssueStorageService();
         public string filePath = "";
         public IssueReportForm()
@@ -33,7 +33,7 @@ namespace municipality_app
             //prevent the user from submitting the form until all required fields are filled
             uploadFileButton.Enabled = false;
 
-            
+
         }
 
 
@@ -52,7 +52,7 @@ namespace municipality_app
                 progress += 20;
                 uploadFileButton.Enabled = true;  // Enable the upload button when description is filled
             }
-                
+
 
             if (!string.IsNullOrWhiteSpace(serviceTypeComboBox.Text))
                 progress += 20;
@@ -84,7 +84,7 @@ namespace municipality_app
 
         private async void submitButton_Click(object sender, EventArgs e)
         {
-           
+
             IssueEntity issueEntity = new IssueEntity()
             {
                 PartitionKey = "issues",
@@ -95,7 +95,7 @@ namespace municipality_app
                 FilePath = fileLabel.Text,
                 IssueCategory = serviceTypeComboBox.Text
             };
-            
+
             await reports.CreateIssueAsync(issueEntity);
 
             MessageBox.Show($"You have successfully submitted the form.",
@@ -245,6 +245,12 @@ namespace municipality_app
         private void materialLabel2_Click(object sender, EventArgs e)
         {
             // empty
+        }
+
+        private void btnViewReports_Click(object sender, EventArgs e)
+        {
+            ViewIssuesForm viewIssuesForm = new ViewIssuesForm();
+            viewIssuesForm.Show();
         }
     }
 }

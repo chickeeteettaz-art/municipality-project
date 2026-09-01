@@ -53,6 +53,7 @@
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
             pictureBox6 = new PictureBox();
             pbxImage = new PictureBox();
+            btnViewReports = new MaterialSkin.Controls.MaterialButton();
             materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -185,7 +186,7 @@
             submitButton.Depth = 0;
             submitButton.HighEmphasis = true;
             submitButton.Icon = Properties.Resources.send;
-            submitButton.Location = new Point(391, 817);
+            submitButton.Location = new Point(300, 816);
             submitButton.Margin = new Padding(4, 6, 4, 6);
             submitButton.MouseState = MaterialSkin.MouseState.HOVER;
             submitButton.Name = "submitButton";
@@ -233,7 +234,7 @@
             cancelButton.ForeColor = Color.Cornsilk;
             cancelButton.HighEmphasis = false;
             cancelButton.Icon = Properties.Resources.cancel;
-            cancelButton.Location = new Point(572, 817);
+            cancelButton.Location = new Point(432, 816);
             cancelButton.Margin = new Padding(4, 6, 4, 6);
             cancelButton.MouseState = MaterialSkin.MouseState.HOVER;
             cancelButton.Name = "cancelButton";
@@ -405,6 +406,29 @@
             pbxImage.TabIndex = 22;
             pbxImage.TabStop = false;
             // 
+            // btnViewReports
+            // 
+            btnViewReports.Anchor = AnchorStyles.None;
+            btnViewReports.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnViewReports.BackColor = Color.WhiteSmoke;
+            btnViewReports.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnViewReports.Depth = 0;
+            btnViewReports.ForeColor = SystemColors.ControlText;
+            btnViewReports.HighEmphasis = false;
+            btnViewReports.Icon = null;
+            btnViewReports.Location = new Point(621, 816);
+            btnViewReports.Margin = new Padding(4, 6, 4, 6);
+            btnViewReports.MouseState = MaterialSkin.MouseState.HOVER;
+            btnViewReports.Name = "btnViewReports";
+            btnViewReports.NoAccentTextColor = Color.Empty;
+            btnViewReports.Size = new Size(109, 36);
+            btnViewReports.TabIndex = 23;
+            btnViewReports.Text = "View Issues";
+            btnViewReports.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnViewReports.UseAccentColor = false;
+            btnViewReports.UseVisualStyleBackColor = false;
+            btnViewReports.Click += btnViewReports_Click;
+            // 
             // IssueReportForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -412,6 +436,7 @@
             BackgroundImage = Properties.Resources.img_background;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1100, 923);
+            Controls.Add(btnViewReports);
             Controls.Add(pbxImage);
             Controls.Add(materialCard2);
             Controls.Add(pictureBox4);
@@ -479,5 +504,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private PictureBox pictureBox6;
         private PictureBox pbxImage;
+        private MaterialSkin.Controls.MaterialButton btnViewReports;
     }
 }
