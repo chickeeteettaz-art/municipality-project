@@ -9,7 +9,6 @@ namespace municipality_app
         {
             InitializeComponent();
 
-            
         }
 
         
