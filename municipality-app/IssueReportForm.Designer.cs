@@ -2,508 +2,974 @@
 {
     partial class IssueReportForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && components != null)
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueReportForm));
-            titleTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            serviceTypeComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            descriptionTextBox = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            uploadFileButton = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            submitButton = new MaterialSkin.Controls.MaterialButton();
-            fileNameLabel = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            cancelButton = new MaterialSkin.Controls.MaterialButton();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            reportingProgressBar = new MaterialSkin.Controls.MaterialProgressBar();
-            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            pictureBox5 = new PictureBox();
-            locationTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            fileNameTxt = new MaterialSkin.Controls.MaterialLabel();
-            fileLabel = new MaterialSkin.Controls.MaterialLabel();
-            materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            pictureBox6 = new PictureBox();
-            pbxImage = new PictureBox();
-            btnViewReports = new MaterialSkin.Controls.MaterialButton();
-            materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            materialCard2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbxImage).BeginInit();
-            SuspendLayout();
-            // 
-            // titleTextBox
-            // 
-            titleTextBox.Anchor = AnchorStyles.None;
-            titleTextBox.AnimateReadOnly = false;
-            titleTextBox.BorderStyle = BorderStyle.None;
-            titleTextBox.Depth = 0;
-            titleTextBox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            titleTextBox.Hint = "Title";
-            titleTextBox.LeadingIcon = null;
-            titleTextBox.Location = new Point(137, 326);
-            titleTextBox.MaxLength = 50;
-            titleTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            titleTextBox.Multiline = false;
-            titleTextBox.Name = "titleTextBox";
-            titleTextBox.Size = new Size(400, 50);
-            titleTextBox.TabIndex = 2;
-            titleTextBox.Text = "";
-            titleTextBox.TrailingIcon = null;
-            // 
-            // serviceTypeComboBox
-            // 
-            serviceTypeComboBox.Anchor = AnchorStyles.None;
-            serviceTypeComboBox.AutoResize = false;
-            serviceTypeComboBox.BackColor = Color.FromArgb(255, 255, 255);
-            serviceTypeComboBox.Depth = 0;
-            serviceTypeComboBox.DrawMode = DrawMode.OwnerDrawVariable;
-            serviceTypeComboBox.DropDownHeight = 174;
-            serviceTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            serviceTypeComboBox.DropDownWidth = 121;
-            serviceTypeComboBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            serviceTypeComboBox.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            serviceTypeComboBox.FormattingEnabled = true;
-            serviceTypeComboBox.IntegralHeight = false;
-            serviceTypeComboBox.ItemHeight = 43;
-            serviceTypeComboBox.Items.AddRange(new object[] { "Roads", "Sanitation", "Utilities" });
-            serviceTypeComboBox.Location = new Point(137, 513);
-            serviceTypeComboBox.MaxDropDownItems = 4;
-            serviceTypeComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            serviceTypeComboBox.Name = "serviceTypeComboBox";
-            serviceTypeComboBox.Size = new Size(400, 49);
-            serviceTypeComboBox.StartIndex = 0;
-            serviceTypeComboBox.TabIndex = 3;
-            // 
-            // descriptionTextBox
-            // 
-            descriptionTextBox.Anchor = AnchorStyles.None;
-            descriptionTextBox.BackColor = Color.FromArgb(255, 255, 255);
-            descriptionTextBox.BorderStyle = BorderStyle.None;
-            descriptionTextBox.Depth = 0;
-            descriptionTextBox.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            descriptionTextBox.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            descriptionTextBox.Hint = "Description";
-            descriptionTextBox.Location = new Point(612, 345);
-            descriptionTextBox.MouseState = MaterialSkin.MouseState.HOVER;
-            descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(382, 324);
-            descriptionTextBox.TabIndex = 4;
-            descriptionTextBox.Text = "";
-            // 
-            // materialLabel3
-            // 
-            materialLabel3.Anchor = AnchorStyles.None;
-            materialLabel3.AutoSize = true;
-            materialLabel3.Depth = 0;
-            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(642, 306);
-            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel3.Name = "materialLabel3";
-            materialLabel3.Size = new Size(85, 19);
-            materialLabel3.TabIndex = 5;
-            materialLabel3.Text = "Description:";
-            // 
-            // materialCard1
-            // 
-            materialCard1.Anchor = AnchorStyles.None;
-            materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Controls.Add(materialLabel4);
-            materialCard1.Controls.Add(uploadFileButton);
-            materialCard1.Depth = 0;
-            materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(204, 627);
-            materialCard1.Margin = new Padding(14);
-            materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard1.Name = "materialCard1";
-            materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(250, 125);
-            materialCard1.TabIndex = 6;
-            // 
-            // materialLabel4
-            // 
-            materialLabel4.AutoSize = true;
-            materialLabel4.Depth = 0;
-            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(73, 92);
-            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel4.Name = "materialLabel4";
-            materialLabel4.Size = new Size(93, 19);
-            materialLabel4.TabIndex = 1;
-            materialLabel4.Text = "Upload a File";
-            // 
-            // uploadFileButton
-            // 
-            uploadFileButton.Depth = 0;
-            uploadFileButton.Icon = Properties.Resources.file;
-            uploadFileButton.Location = new Point(91, 17);
-            uploadFileButton.MouseState = MaterialSkin.MouseState.HOVER;
-            uploadFileButton.Name = "uploadFileButton";
-            uploadFileButton.Size = new Size(59, 58);
-            uploadFileButton.TabIndex = 0;
-            uploadFileButton.Text = "materialFloatingActionButton1";
-            uploadFileButton.UseVisualStyleBackColor = true;
-            uploadFileButton.Click += uploadFileButton_Click;
-            // 
-            // submitButton
-            // 
-            submitButton.Anchor = AnchorStyles.None;
-            submitButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            submitButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            submitButton.Depth = 0;
-            submitButton.HighEmphasis = true;
-            submitButton.Icon = Properties.Resources.send;
-            submitButton.Location = new Point(300, 816);
-            submitButton.Margin = new Padding(4, 6, 4, 6);
-            submitButton.MouseState = MaterialSkin.MouseState.HOVER;
-            submitButton.Name = "submitButton";
-            submitButton.NoAccentTextColor = Color.Empty;
-            submitButton.Padding = new Padding(100, 0, 100, 0);
-            submitButton.Size = new Size(103, 36);
-            submitButton.TabIndex = 7;
-            submitButton.Text = "Submit";
-            submitButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            submitButton.UseAccentColor = false;
-            submitButton.UseVisualStyleBackColor = true;
-            submitButton.Click += submitButton_Click;
-            // 
-            // fileNameLabel
-            // 
-            fileNameLabel.Anchor = AnchorStyles.None;
-            fileNameLabel.AutoSize = true;
-            fileNameLabel.Depth = 0;
-            fileNameLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            fileNameLabel.Location = new Point(204, 766);
-            fileNameLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            fileNameLabel.Name = "fileNameLabel";
-            fileNameLabel.Size = new Size(76, 19);
-            fileNameLabel.TabIndex = 8;
-            fileNameLabel.Text = "File Name:";
-            // 
-            // materialLabel6
-            // 
-            materialLabel6.AutoSize = true;
-            materialLabel6.Depth = 0;
-            materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel6.Location = new Point(286, 766);
-            materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel6.Name = "materialLabel6";
-            materialLabel6.Size = new Size(1, 0);
-            materialLabel6.TabIndex = 9;
-            // 
-            // cancelButton
-            // 
-            cancelButton.Anchor = AnchorStyles.None;
-            cancelButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            cancelButton.BackColor = Color.LightCoral;
-            cancelButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            cancelButton.Depth = 0;
-            cancelButton.ForeColor = Color.Cornsilk;
-            cancelButton.HighEmphasis = false;
-            cancelButton.Icon = Properties.Resources.cancel;
-            cancelButton.Location = new Point(432, 816);
-            cancelButton.Margin = new Padding(4, 6, 4, 6);
-            cancelButton.MouseState = MaterialSkin.MouseState.HOVER;
-            cancelButton.Name = "cancelButton";
-            cancelButton.NoAccentTextColor = Color.Empty;
-            cancelButton.Size = new Size(155, 36);
-            cancelButton.TabIndex = 10;
-            cancelButton.Text = "Back to Menu";
-            cancelButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            cancelButton.UseAccentColor = false;
-            cancelButton.UseVisualStyleBackColor = false;
-            cancelButton.Click += cancelButton_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(107, 336);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(24, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(107, 522);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(24, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.None;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(612, 306);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(24, 28);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 13;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.None;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(391, 115);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(454, 100);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 14;
-            pictureBox4.TabStop = false;
-            // 
-            // reportingProgressBar
-            // 
-            reportingProgressBar.Anchor = AnchorStyles.None;
-            reportingProgressBar.Depth = 0;
-            reportingProgressBar.ForeColor = SystemColors.MenuHighlight;
-            reportingProgressBar.Location = new Point(247, 275);
-            reportingProgressBar.MouseState = MaterialSkin.MouseState.HOVER;
-            reportingProgressBar.Name = "reportingProgressBar";
-            reportingProgressBar.Size = new Size(648, 5);
-            reportingProgressBar.TabIndex = 15;
-            // 
-            // materialLabel1
-            // 
-            materialLabel1.Anchor = AnchorStyles.None;
-            materialLabel1.AutoSize = true;
-            materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(502, 244);
-            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(134, 19);
-            materialLabel1.TabIndex = 16;
-            materialLabel1.Text = "Reporting progress";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Anchor = AnchorStyles.None;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(107, 428);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(24, 28);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 18;
-            pictureBox5.TabStop = false;
-            // 
-            // locationTextBox
-            // 
-            locationTextBox.Anchor = AnchorStyles.None;
-            locationTextBox.AnimateReadOnly = false;
-            locationTextBox.BorderStyle = BorderStyle.None;
-            locationTextBox.Depth = 0;
-            locationTextBox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            locationTextBox.Hint = "Location";
-            locationTextBox.LeadingIcon = null;
-            locationTextBox.Location = new Point(137, 418);
-            locationTextBox.MaxLength = 50;
-            locationTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            locationTextBox.Multiline = false;
-            locationTextBox.Name = "locationTextBox";
-            locationTextBox.Size = new Size(400, 50);
-            locationTextBox.TabIndex = 17;
-            locationTextBox.Text = "";
-            locationTextBox.TrailingIcon = null;
-            // 
-            // fileNameTxt
-            // 
-            fileNameTxt.Anchor = AnchorStyles.None;
-            fileNameTxt.AutoSize = true;
-            fileNameTxt.Depth = 0;
-            fileNameTxt.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            fileNameTxt.Location = new Point(286, 766);
-            fileNameTxt.MouseState = MaterialSkin.MouseState.HOVER;
-            fileNameTxt.Name = "fileNameTxt";
-            fileNameTxt.Size = new Size(43, 19);
-            fileNameTxt.TabIndex = 19;
-            fileNameTxt.Text = "file.ex";
-            // 
-            // fileLabel
-            // 
-            fileLabel.Anchor = AnchorStyles.None;
-            fileLabel.AutoSize = true;
-            fileLabel.Depth = 0;
-            fileLabel.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            fileLabel.Location = new Point(340, 766);
-            fileLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            fileLabel.Name = "fileLabel";
-            fileLabel.Size = new Size(4, 19);
-            fileLabel.TabIndex = 20;
-            fileLabel.Text = "'";
-            fileLabel.Visible = false;
-            fileLabel.Click += materialLabel2_Click;
-            // 
-            // materialCard2
-            // 
-            materialCard2.Anchor = AnchorStyles.None;
-            materialCard2.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard2.Controls.Add(pictureBox6);
-            materialCard2.Depth = 0;
-            materialCard2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard2.Location = new Point(295, 98);
-            materialCard2.Margin = new Padding(14);
-            materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCard2.Name = "materialCard2";
-            materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(123, 123);
-            materialCard2.TabIndex = 21;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(27, 28);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(70, 68);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 0;
-            pictureBox6.TabStop = false;
-            // 
-            // pbxImage
-            // 
-            pbxImage.Location = new Point(20, 599);
-            pbxImage.Name = "pbxImage";
-            pbxImage.Size = new Size(167, 167);
-            pbxImage.TabIndex = 22;
-            pbxImage.TabStop = false;
-            // 
-            // btnViewReports
-            // 
-            btnViewReports.Anchor = AnchorStyles.None;
-            btnViewReports.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnViewReports.BackColor = Color.WhiteSmoke;
-            btnViewReports.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnViewReports.Depth = 0;
-            btnViewReports.ForeColor = SystemColors.ControlText;
-            btnViewReports.HighEmphasis = false;
-            btnViewReports.Icon = null;
-            btnViewReports.Location = new Point(621, 816);
-            btnViewReports.Margin = new Padding(4, 6, 4, 6);
-            btnViewReports.MouseState = MaterialSkin.MouseState.HOVER;
-            btnViewReports.Name = "btnViewReports";
-            btnViewReports.NoAccentTextColor = Color.Empty;
-            btnViewReports.Size = new Size(109, 36);
-            btnViewReports.TabIndex = 23;
-            btnViewReports.Text = "View Issues";
-            btnViewReports.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnViewReports.UseAccentColor = false;
-            btnViewReports.UseVisualStyleBackColor = false;
-            btnViewReports.Click += btnViewReports_Click;
-            // 
-            // IssueReportForm
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.img_background;
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(1100, 923);
-            Controls.Add(btnViewReports);
-            Controls.Add(pbxImage);
-            Controls.Add(materialCard2);
-            Controls.Add(pictureBox4);
-            Controls.Add(fileLabel);
-            Controls.Add(fileNameTxt);
-            Controls.Add(pictureBox5);
-            Controls.Add(locationTextBox);
-            Controls.Add(materialLabel1);
-            Controls.Add(reportingProgressBar);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
-            Controls.Add(cancelButton);
-            Controls.Add(materialLabel6);
-            Controls.Add(fileNameLabel);
-            Controls.Add(submitButton);
-            Controls.Add(materialCard1);
-            Controls.Add(materialLabel3);
-            Controls.Add(descriptionTextBox);
-            Controls.Add(serviceTypeComboBox);
-            Controls.Add(titleTextBox);
-            DrawerBackgroundWithAccent = true;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "IssueReportForm";
-            Sizable = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Service Request Form";
-            Load += ServiceRequestForm_Load;
-            materialCard1.ResumeLayout(false);
-            materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            materialCard2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbxImage).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.mainPanel = new Panel();
+            this.scrollPanel = new Panel();
+            this.contentPanel = new Panel();
+
+            this.headerPanel = new Panel();
+            this.headerTitleLabel = new Label();
+            this.headerSubtitleLabel = new Label();
+            this.btnViewReports = new Button();
+
+            this.progressPanel = new Panel();
+            this.progressTitleLabel = new Label();
+            this.progressPercentLabel = new Label();
+            this.reportingProgressBar = new ProgressBar();
+
+            this.detailsPanel = new Panel();
+            this.detailsTitleLabel = new Label();
+
+            this.titleLabel = new Label();
+            this.titleTextBox = new TextBox();
+
+            this.locationLabel = new Label();
+            this.locationTextBox = new TextBox();
+
+            this.serviceTypeLabel = new Label();
+            this.serviceTypeComboBox = new ComboBox();
+
+            this.descriptionPanel = new Panel();
+            this.descriptionTitleLabel = new Label();
+            this.descriptionTextBox = new RichTextBox();
+
+            this.attachmentPanel = new Panel();
+            this.attachmentTitleLabel = new Label();
+            this.uploadFileButton = new Button();
+            this.fileNameLabel = new Label();
+            this.fileNameTxt = new Label();
+            this.fileLabel = new Label();
+
+            this.previewPanel = new Panel();
+            this.previewTitleLabel = new Label();
+            this.pbxImage = new PictureBox();
+            this.previewPlaceholderLabel = new Label();
+
+            this.footerPanel = new Panel();
+            this.submitButton = new Button();
+            this.cancelButton = new Button();
+
+            this.mainPanel.SuspendLayout();
+            this.scrollPanel.SuspendLayout();
+            this.contentPanel.SuspendLayout();
+
+            this.headerPanel.SuspendLayout();
+            this.progressPanel.SuspendLayout();
+
+            this.detailsPanel.SuspendLayout();
+            this.descriptionPanel.SuspendLayout();
+            this.attachmentPanel.SuspendLayout();
+            this.previewPanel.SuspendLayout();
+
+            ((System.ComponentModel.ISupportInitialize)
+                (this.pbxImage)).BeginInit();
+
+            this.footerPanel.SuspendLayout();
+
+            this.SuspendLayout();
+
+            // ==========================================================
+            // MAIN PANEL
+            // ==========================================================
+
+            this.mainPanel.Dock = DockStyle.Fill;
+            this.mainPanel.BackColor =
+                Color.FromArgb(245, 247, 250);
+            this.mainPanel.Padding =
+                new Padding(0);
+
+            // ==========================================================
+            // SCROLL PANEL
+            // ==========================================================
+
+            this.scrollPanel.Dock =
+                DockStyle.Fill;
+
+            this.scrollPanel.AutoScroll =
+                true;
+
+            this.scrollPanel.BackColor =
+                Color.FromArgb(245, 247, 250);
+
+            // ==========================================================
+            // CONTENT PANEL
+            // ==========================================================
+
+            this.contentPanel.BackColor =
+                Color.FromArgb(245, 247, 250);
+
+            this.contentPanel.Location =
+                new Point(0, 0);
+
+            this.contentPanel.Size =
+                new Size(1050, 1050);
+
+            this.contentPanel.MinimumSize =
+                new Size(850, 1050);
+
+            // ==========================================================
+            // HEADER
+            // ==========================================================
+
+            this.headerPanel.BackColor =
+                Color.FromArgb(25, 118, 160);
+
+            this.headerPanel.Location =
+                new Point(20, 20);
+
+            this.headerPanel.Size =
+                new Size(1010, 105);
+
+            this.headerTitleLabel.AutoSize = true;
+
+            this.headerTitleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    22F,
+                    FontStyle.Bold);
+
+            this.headerTitleLabel.ForeColor =
+                Color.White;
+
+            this.headerTitleLabel.Location =
+                new Point(25, 18);
+
+            this.headerTitleLabel.Text =
+                "Report a Community Issue";
+
+            this.headerSubtitleLabel.AutoSize = true;
+
+            this.headerSubtitleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    10F);
+
+            this.headerSubtitleLabel.ForeColor =
+                Color.FromArgb(
+                    220,
+                    240,
+                    250);
+
+            this.headerSubtitleLabel.Location =
+                new Point(28, 62);
+
+            this.headerSubtitleLabel.Text =
+                "Help us keep your community safe, clean and connected.";
+
+            // View issues
+
+            this.btnViewReports.Anchor =
+                AnchorStyles.Top |
+                AnchorStyles.Right;
+
+            this.btnViewReports.BackColor =
+                Color.White;
+
+            this.btnViewReports.FlatStyle =
+                FlatStyle.Flat;
+
+            this.btnViewReports.FlatAppearance.BorderSize =
+                0;
+
+            this.btnViewReports.Font =
+                new Font(
+                    "Segoe UI",
+                    9F,
+                    FontStyle.Bold);
+
+            this.btnViewReports.ForeColor =
+                Color.FromArgb(25, 118, 160);
+
+            this.btnViewReports.Size =
+                new Size(125, 40);
+
+            this.btnViewReports.Location =
+                new Point(
+                    860,
+                    32);
+
+            this.btnViewReports.Text =
+                "View Issues";
+
+            this.btnViewReports.Cursor =
+                Cursors.Hand;
+
+            this.btnViewReports.Click +=
+                new EventHandler(
+                    this.btnViewReports_Click);
+
+            this.headerPanel.Controls.Add(
+                this.headerTitleLabel);
+
+            this.headerPanel.Controls.Add(
+                this.headerSubtitleLabel);
+
+            this.headerPanel.Controls.Add(
+                this.btnViewReports);
+
+            // ==========================================================
+            // PROGRESS
+            // ==========================================================
+
+            this.progressPanel.BackColor =
+                Color.White;
+
+            this.progressPanel.Location =
+                new Point(20, 140);
+
+            this.progressPanel.Size =
+                new Size(1010, 75);
+
+            this.progressTitleLabel.AutoSize =
+                true;
+
+            this.progressTitleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    9F,
+                    FontStyle.Bold);
+
+            this.progressTitleLabel.ForeColor =
+                Color.FromArgb(70, 78, 88);
+
+            this.progressTitleLabel.Location =
+                new Point(20, 12);
+
+            this.progressTitleLabel.Text =
+                "REPORTING PROGRESS";
+
+            this.progressPercentLabel.AutoSize =
+                true;
+
+            this.progressPercentLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    9F,
+                    FontStyle.Bold);
+
+            this.progressPercentLabel.ForeColor =
+                Color.FromArgb(25, 118, 160);
+
+            this.progressPercentLabel.Location =
+                new Point(940, 12);
+
+            this.progressPercentLabel.Text =
+                "0%";
+
+            this.reportingProgressBar.Location =
+                new Point(20, 40);
+
+            this.reportingProgressBar.Size =
+                new Size(970, 12);
+
+            this.reportingProgressBar.Minimum = 0;
+            this.reportingProgressBar.Maximum = 100;
+            this.reportingProgressBar.Value = 0;
+
+            this.progressPanel.Controls.Add(
+                this.progressTitleLabel);
+
+            this.progressPanel.Controls.Add(
+                this.progressPercentLabel);
+
+            this.progressPanel.Controls.Add(
+                this.reportingProgressBar);
+
+            // ==========================================================
+            // DETAILS
+            // ==========================================================
+
+            this.detailsPanel.BackColor =
+                Color.White;
+
+            this.detailsPanel.Location =
+                new Point(20, 235);
+
+            this.detailsPanel.Size =
+                new Size(490, 350);
+
+            this.detailsTitleLabel.AutoSize = true;
+
+            this.detailsTitleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    14F,
+                    FontStyle.Bold);
+
+            this.detailsTitleLabel.ForeColor =
+                Color.FromArgb(40, 48, 58);
+
+            this.detailsTitleLabel.Location =
+                new Point(25, 20);
+
+            this.detailsTitleLabel.Text =
+                "Issue Details";
+
+            // Title
+
+            this.titleLabel.AutoSize = true;
+
+            this.titleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    9F,
+                    FontStyle.Bold);
+
+            this.titleLabel.ForeColor =
+                Color.FromArgb(90, 98, 108);
+
+            this.titleLabel.Location =
+                new Point(25, 65);
+
+            this.titleLabel.Text =
+                "Issue title";
+
+            this.titleTextBox.Font =
+                new Font(
+                    "Segoe UI",
+                    11F);
+
+            this.titleTextBox.Location =
+                new Point(25, 88);
+
+            this.titleTextBox.Size =
+                new Size(440, 32);
+
+            this.titleTextBox.BorderStyle =
+                BorderStyle.FixedSingle;
+
+            this.titleTextBox.MaxLength = 50;
+
+            // Location
+
+            this.locationLabel.AutoSize = true;
+
+            this.locationLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    9F,
+                    FontStyle.Bold);
+
+            this.locationLabel.ForeColor =
+                Color.FromArgb(90, 98, 108);
+
+            this.locationLabel.Location =
+                new Point(25, 135);
+
+            this.locationLabel.Text =
+                "Location";
+
+            this.locationTextBox.Font =
+                new Font(
+                    "Segoe UI",
+                    11F);
+
+            this.locationTextBox.Location =
+                new Point(25, 158);
+
+            this.locationTextBox.Size =
+                new Size(440, 32);
+
+            this.locationTextBox.BorderStyle =
+                BorderStyle.FixedSingle;
+
+            this.locationTextBox.MaxLength = 50;
+
+            // Service
+
+            this.serviceTypeLabel.AutoSize = true;
+
+            this.serviceTypeLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    9F,
+                    FontStyle.Bold);
+
+            this.serviceTypeLabel.ForeColor =
+                Color.FromArgb(90, 98, 108);
+
+            this.serviceTypeLabel.Location =
+                new Point(25, 205);
+
+            this.serviceTypeLabel.Text =
+                "Service category";
+
+            this.serviceTypeComboBox.DropDownStyle =
+                ComboBoxStyle.DropDownList;
+
+            this.serviceTypeComboBox.Font =
+                new Font(
+                    "Segoe UI",
+                    11F);
+
+            this.serviceTypeComboBox.Location =
+                new Point(25, 228);
+
+            this.serviceTypeComboBox.Size =
+                new Size(440, 33);
+
+            this.serviceTypeComboBox.Items.AddRange(
+                new object[]
+                {
+                    "Roads",
+                    "Sanitation",
+                    "Utilities"
+                });
+
+            this.serviceTypeComboBox.SelectedIndex = -1;
+
+            this.detailsPanel.Controls.Add(
+                this.detailsTitleLabel);
+
+            this.detailsPanel.Controls.Add(
+                this.titleLabel);
+
+            this.detailsPanel.Controls.Add(
+                this.titleTextBox);
+
+            this.detailsPanel.Controls.Add(
+                this.locationLabel);
+
+            this.detailsPanel.Controls.Add(
+                this.locationTextBox);
+
+            this.detailsPanel.Controls.Add(
+                this.serviceTypeLabel);
+
+            this.detailsPanel.Controls.Add(
+                this.serviceTypeComboBox);
+
+            // ==========================================================
+            // DESCRIPTION
+            // ==========================================================
+
+            this.descriptionPanel.BackColor =
+                Color.White;
+
+            this.descriptionPanel.Location =
+                new Point(530, 235);
+
+            this.descriptionPanel.Size =
+                new Size(500, 350);
+
+            this.descriptionTitleLabel.AutoSize =
+                true;
+
+            this.descriptionTitleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    14F,
+                    FontStyle.Bold);
+
+            this.descriptionTitleLabel.ForeColor =
+                Color.FromArgb(40, 48, 58);
+
+            this.descriptionTitleLabel.Location =
+                new Point(25, 20);
+
+            this.descriptionTitleLabel.Text =
+                "Describe the Issue";
+
+            this.descriptionTextBox.Font =
+                new Font(
+                    "Segoe UI",
+                    10.5F);
+
+            this.descriptionTextBox.Location =
+                new Point(25, 65);
+
+            this.descriptionTextBox.Size =
+                new Size(450, 255);
+
+            this.descriptionTextBox.BorderStyle =
+                BorderStyle.FixedSingle;
+
+            this.descriptionTextBox.ScrollBars =
+                RichTextBoxScrollBars.Vertical;
+
+            this.descriptionTextBox.WordWrap = true;
+
+            this.descriptionPanel.Controls.Add(
+                this.descriptionTitleLabel);
+
+            this.descriptionPanel.Controls.Add(
+                this.descriptionTextBox);
+
+            // ==========================================================
+            // ATTACHMENT
+            // ==========================================================
+
+            this.attachmentPanel.BackColor =
+                Color.White;
+
+            this.attachmentPanel.Location =
+                new Point(20, 605);
+
+            this.attachmentPanel.Size =
+                new Size(490, 260);
+
+            this.attachmentTitleLabel.AutoSize =
+                true;
+
+            this.attachmentTitleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    14F,
+                    FontStyle.Bold);
+
+            this.attachmentTitleLabel.ForeColor =
+                Color.FromArgb(40, 48, 58);
+
+            this.attachmentTitleLabel.Location =
+                new Point(25, 20);
+
+            this.attachmentTitleLabel.Text =
+                "Supporting Evidence";
+
+            // Upload button
+
+            this.uploadFileButton.BackColor =
+                Color.FromArgb(25, 118, 160);
+
+            this.uploadFileButton.FlatStyle =
+                FlatStyle.Flat;
+
+            this.uploadFileButton.FlatAppearance.BorderSize =
+                0;
+
+            this.uploadFileButton.Font =
+                new Font(
+                    "Segoe UI",
+                    10F,
+                    FontStyle.Bold);
+
+            this.uploadFileButton.ForeColor =
+                Color.White;
+
+            this.uploadFileButton.Location =
+                new Point(25, 65);
+
+            this.uploadFileButton.Size =
+                new Size(440, 50);
+
+            this.uploadFileButton.Text =
+                "＋   Upload Supporting File";
+
+            this.uploadFileButton.Cursor =
+                Cursors.Hand;
+
+            this.uploadFileButton.Enabled =
+                false;
+
+            this.uploadFileButton.Click +=
+                new EventHandler(
+                    this.uploadFileButton_Click);
+
+            // File label
+
+            this.fileNameLabel.AutoSize =
+                true;
+
+            this.fileNameLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    9F,
+                    FontStyle.Bold);
+
+            this.fileNameLabel.ForeColor =
+                Color.FromArgb(90, 98, 108);
+
+            this.fileNameLabel.Location =
+                new Point(25, 135);
+
+            this.fileNameLabel.Text =
+                "Selected file:";
+
+            this.fileNameTxt.AutoEllipsis =
+                true;
+
+            this.fileNameTxt.Font =
+                new Font(
+                    "Segoe UI",
+                    9F);
+
+            this.fileNameTxt.ForeColor =
+                Color.FromArgb(25, 118, 160);
+
+            this.fileNameTxt.Location =
+                new Point(25, 160);
+
+            this.fileNameTxt.Size =
+                new Size(440, 40);
+
+            this.fileNameTxt.Text =
+                "No file selected";
+
+            this.fileLabel.Visible = false;
+
+            this.attachmentPanel.Controls.Add(
+                this.attachmentTitleLabel);
+
+            this.attachmentPanel.Controls.Add(
+                this.uploadFileButton);
+
+            this.attachmentPanel.Controls.Add(
+                this.fileNameLabel);
+
+            this.attachmentPanel.Controls.Add(
+                this.fileNameTxt);
+
+            this.attachmentPanel.Controls.Add(
+                this.fileLabel);
+
+            // ==========================================================
+            // PREVIEW
+            // ==========================================================
+
+            this.previewPanel.BackColor =
+                Color.White;
+
+            this.previewPanel.Location =
+                new Point(530, 605);
+
+            this.previewPanel.Size =
+                new Size(500, 260);
+
+            this.previewTitleLabel.AutoSize =
+                true;
+
+            this.previewTitleLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    14F,
+                    FontStyle.Bold);
+
+            this.previewTitleLabel.ForeColor =
+                Color.FromArgb(40, 48, 58);
+
+            this.previewTitleLabel.Location =
+                new Point(25, 20);
+
+            this.previewTitleLabel.Text =
+                "Image Preview";
+
+            this.pbxImage.BackColor =
+                Color.FromArgb(245, 247, 250);
+
+            this.pbxImage.BorderStyle =
+                BorderStyle.FixedSingle;
+
+            this.pbxImage.Location =
+                new Point(25, 60);
+
+            this.pbxImage.Size =
+                new Size(450, 175);
+
+            this.pbxImage.SizeMode =
+                PictureBoxSizeMode.Zoom;
+
+            this.pbxImage.Visible = false;
+
+            this.previewPlaceholderLabel.AutoSize =
+                false;
+
+            this.previewPlaceholderLabel.Text =
+                "No image selected";
+
+            this.previewPlaceholderLabel.TextAlign =
+                ContentAlignment.MiddleCenter;
+
+            this.previewPlaceholderLabel.Font =
+                new Font(
+                    "Segoe UI",
+                    9F);
+
+            this.previewPlaceholderLabel.ForeColor =
+                Color.Gray;
+
+            this.previewPlaceholderLabel.BackColor =
+                Color.FromArgb(245, 247, 250);
+
+            this.previewPlaceholderLabel.Location =
+                new Point(25, 60);
+
+            this.previewPlaceholderLabel.Size =
+                new Size(450, 175);
+
+            this.previewPanel.Controls.Add(
+                this.previewTitleLabel);
+
+            this.previewPanel.Controls.Add(
+                this.pbxImage);
+
+            this.previewPanel.Controls.Add(
+                this.previewPlaceholderLabel);
+
+            // ==========================================================
+            // FOOTER
+            // ==========================================================
+
+            this.footerPanel.BackColor =
+                Color.FromArgb(245, 247, 250);
+
+            this.footerPanel.Location =
+                new Point(20, 885);
+
+            this.footerPanel.Size =
+                new Size(1010, 80);
+
+            // Submit
+
+            this.submitButton.BackColor =
+                Color.FromArgb(25, 118, 160);
+
+            this.submitButton.FlatStyle =
+                FlatStyle.Flat;
+
+            this.submitButton.FlatAppearance.BorderSize =
+                0;
+
+            this.submitButton.Font =
+                new Font(
+                    "Segoe UI",
+                    10F,
+                    FontStyle.Bold);
+
+            this.submitButton.ForeColor =
+                Color.White;
+
+            this.submitButton.Size =
+                new Size(160, 45);
+
+            this.submitButton.Location =
+                new Point(515, 15);
+
+            this.submitButton.Text =
+                "Submit Report";
+
+            this.submitButton.Cursor =
+                Cursors.Hand;
+
+            this.submitButton.Enabled =
+                false;
+
+            this.submitButton.Click +=
+                new EventHandler(
+                    this.submitButton_Click);
+
+            // Cancel
+
+            this.cancelButton.BackColor =
+                Color.White;
+
+            this.cancelButton.FlatStyle =
+                FlatStyle.Flat;
+
+            this.cancelButton.FlatAppearance.BorderColor =
+                Color.FromArgb(210, 215, 220);
+
+            this.cancelButton.Font =
+                new Font(
+                    "Segoe UI",
+                    10F);
+
+            this.cancelButton.ForeColor =
+                Color.FromArgb(70, 78, 88);
+
+            this.cancelButton.Size =
+                new Size(120, 45);
+
+            this.cancelButton.Location =
+                new Point(685, 15);
+
+            this.cancelButton.Text =
+                "Cancel";
+
+            this.cancelButton.Cursor =
+                Cursors.Hand;
+
+            this.cancelButton.Click +=
+                new EventHandler(
+                    this.cancelButton_Click);
+
+            this.footerPanel.Controls.Add(
+                this.submitButton);
+
+            this.footerPanel.Controls.Add(
+                this.cancelButton);
+
+            // ==========================================================
+            // ADD EVERYTHING TO CONTENT PANEL
+            // ==========================================================
+
+            this.contentPanel.Controls.Add(
+                this.headerPanel);
+
+            this.contentPanel.Controls.Add(
+                this.progressPanel);
+
+            this.contentPanel.Controls.Add(
+                this.detailsPanel);
+
+            this.contentPanel.Controls.Add(
+                this.descriptionPanel);
+
+            this.contentPanel.Controls.Add(
+                this.attachmentPanel);
+
+            this.contentPanel.Controls.Add(
+                this.previewPanel);
+
+            this.contentPanel.Controls.Add(
+                this.footerPanel);
+
+            // ==========================================================
+            // SCROLL PANEL
+            // ==========================================================
+
+            this.scrollPanel.Controls.Add(
+                this.contentPanel);
+
+            // ==========================================================
+            // MAIN PANEL
+            // ==========================================================
+
+            this.mainPanel.Controls.Add(
+                this.scrollPanel);
+
+            this.Controls.Add(
+                this.mainPanel);
+
+            // ==========================================================
+            // FORM
+            // ==========================================================
+
+            this.AutoScaleDimensions =
+                new SizeF(8F, 20F);
+
+            this.AutoScaleMode =
+                AutoScaleMode.Font;
+
+            this.ClientSize =
+                new Size(1100, 750);
+
+            this.MinimumSize =
+                new Size(800, 600);
+
+            this.BackColor =
+                Color.FromArgb(245, 247, 250);
+
+            this.StartPosition =
+                FormStartPosition.CenterScreen;
+
+            this.Text =
+                "Municipal Services - Report Issue";
+
+            this.FormBorderStyle =
+                FormBorderStyle.Sizable;
+
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+
+            this.Load +=
+                new EventHandler(
+                    this.ServiceRequestForm_Load);
+
+            // ==========================================================
+
+            ((System.ComponentModel.ISupportInitialize)
+                (this.pbxImage)).EndInit();
+
+            this.footerPanel.ResumeLayout(false);
+
+            this.previewPanel.ResumeLayout(false);
+            this.previewPanel.PerformLayout();
+
+            this.attachmentPanel.ResumeLayout(false);
+            this.attachmentPanel.PerformLayout();
+
+            this.descriptionPanel.ResumeLayout(false);
+            this.descriptionPanel.PerformLayout();
+
+            this.detailsPanel.ResumeLayout(false);
+            this.detailsPanel.PerformLayout();
+
+            this.progressPanel.ResumeLayout(false);
+            this.progressPanel.PerformLayout();
+
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
+
+            this.contentPanel.ResumeLayout(false);
+
+            this.scrollPanel.ResumeLayout(false);
+
+            this.mainPanel.ResumeLayout(false);
+
+            this.ResumeLayout(false);
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialTextBox titleTextBox;
-        private MaterialSkin.Controls.MaterialComboBox serviceTypeComboBox;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox descriptionTextBox;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialFloatingActionButton uploadFileButton;
-        private MaterialSkin.Controls.MaterialButton submitButton;
-        private MaterialSkin.Controls.MaterialLabel fileNameLabel;
-        private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialButton cancelButton;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private MaterialSkin.Controls.MaterialProgressBar reportingProgressBar;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private PictureBox pictureBox5;
-        private MaterialSkin.Controls.MaterialTextBox locationTextBox;
-        private MaterialSkin.Controls.MaterialLabel fileNameTxt;
-        private MaterialSkin.Controls.MaterialLabel fileLabel;
-        private MaterialSkin.Controls.MaterialCard materialCard2;
-        private PictureBox pictureBox6;
+
+        private Panel mainPanel;
+        private Panel scrollPanel;
+        private Panel contentPanel;
+
+        private Panel headerPanel;
+        private Label headerTitleLabel;
+        private Label headerSubtitleLabel;
+        private Button btnViewReports;
+
+        private Panel progressPanel;
+        private Label progressTitleLabel;
+        private Label progressPercentLabel;
+        private ProgressBar reportingProgressBar;
+
+        private Panel detailsPanel;
+        private Label detailsTitleLabel;
+
+        private Label titleLabel;
+        private TextBox titleTextBox;
+
+        private Label locationLabel;
+        private TextBox locationTextBox;
+
+        private Label serviceTypeLabel;
+        private ComboBox serviceTypeComboBox;
+
+        private Panel descriptionPanel;
+        private Label descriptionTitleLabel;
+        private RichTextBox descriptionTextBox;
+
+        private Panel attachmentPanel;
+        private Label attachmentTitleLabel;
+        private Button uploadFileButton;
+        private Label fileNameLabel;
+        private Label fileNameTxt;
+        private Label fileLabel;
+
+        private Panel previewPanel;
+        private Label previewTitleLabel;
         private PictureBox pbxImage;
-        private MaterialSkin.Controls.MaterialButton btnViewReports;
+        private Label previewPlaceholderLabel;
+
+        private Panel footerPanel;
+        private Button submitButton;
+        private Button cancelButton;
     }
 }

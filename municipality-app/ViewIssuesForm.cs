@@ -15,35 +15,15 @@ namespace municipality_app
 
             _issueService = new IssueStorageService();
         }
-
-
-        // =====================================================
-        // FORM LOAD
-        // =====================================================
-
-        private async void ViewIssuesForm_Load(
-            object sender,
-            EventArgs e)
+        private async void ViewIssuesForm_Load(object sender, EventArgs e)
         {
             await LoadIssuesAsync();
         }
 
-
-        // =====================================================
-        // VIEW ISSUES BUTTON
-        // =====================================================
-
-        private async void btnViewIssues_Click(
-            object sender,
-            EventArgs e)
+        private async void btnViewIssues_Click(object sender,EventArgs e)
         {
             await LoadIssuesAsync();
         }
-
-
-        // =====================================================
-        // LOAD ISSUES
-        // =====================================================
 
         private async Task LoadIssuesAsync()
         {
@@ -51,16 +31,11 @@ namespace municipality_app
             {
                 btnViewIssues.Enabled = false;
                 btnSearch.Enabled = false;
-
                 lblStatus.Text = "Loading issues...";
-
-                _allIssues =
-                    await _issueService.GetIssuesAsync();
-
+                _allIssues = await _issueService.GetIssuesAsync();
                 DisplayIssues(_allIssues);
 
-                lblStatus.Text =
-                    $"{_allIssues.Count} issue(s) loaded";
+                lblStatus.Text = $"{_allIssues.Count} issue(s) loaded";
             }
             catch (Exception ex)
             {
@@ -79,13 +54,8 @@ namespace municipality_app
             }
         }
 
-
-        // =====================================================
-        // DISPLAY ISSUES
-        // =====================================================
-
-        private void DisplayIssues(
-            IEnumerable<IssueEntity> issues)
+        
+        private void DisplayIssues(IEnumerable<IssueEntity> issues)
         {
             dgvIssues.DataSource = null;
 
@@ -138,11 +108,7 @@ namespace municipality_app
             }
         }
 
-
-        // =====================================================
-        // SEARCH BUTTON
-        // =====================================================
-
+       
         private void btnSearch_Click(
             object sender,
             EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using Azure;
 using Azure.Data.Tables;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using muni_class_library;
 
@@ -7,18 +8,18 @@ namespace storage_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class IssuesController : ControllerBase
+    public class AnnouncementsController : ControllerBase
     {
         private readonly TableClient _tableClient;
         private readonly ILogger<IssuesController> _logger;
 
-        public IssuesController(IConfiguration configuration,ILogger<IssuesController> logger)
+        public AnnouncementsController(IConfiguration configuration, ILogger<IssuesController> logger)
         {
             _logger = logger;
 
             string? connectionString = configuration.GetConnectionString("AzureStorage");
 
-            string tableName = configuration["AzureTableStorage:TableName"]?? "issues";
+            string tableName = configuration["AzureTableStorage:AnnouncementsTableName"] ?? "issues";
 
             if (string.IsNullOrWhiteSpace(connectionString))
             {
@@ -30,26 +31,25 @@ namespace storage_api.Controllers
             _tableClient.CreateIfNotExists();
         }
 
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<IssueEntity>>> GetIssues()
+        public async Task<ActionResult<IEnumerable<Announcement>>> GetAnnouncements()
         {
             try
             {
-                List<IssueEntity> issues = new();
+                List<Announcement> announcements = new();
 
-                await foreach (IssueEntity issue in _tableClient.QueryAsync<IssueEntity>())
+                await foreach (Announcement announcement in _tableClient.QueryAsync<Announcement>())
                 {
-                    issues.Add(issue);
+                    announcements.Add(announcement);
                 }
 
-                return Ok(issues);
+                return Ok(announcements);
             }
             catch (Exception ex)
             {
                 _logger.LogError(
                     ex,
-                    "Error retrieving issues from Azure Table Storage.");
+                    "Error retrieving announcements from Azure Table Storage.");
 
                 return StatusCode(
                     StatusCodes.Status500InternalServerError,
@@ -62,11 +62,11 @@ namespace storage_api.Controllers
         }
 
         [HttpGet("{partitionKey}/{rowKey}")]
-        public async Task<ActionResult<IssueEntity>> GetIssue(string partitionKey,string rowKey)
+        public async Task<ActionResult<Announcement>> GetAnnouncement(string partitionKey, string rowKey)
         {
             try
             {
-                Response<IssueEntity> response =await _tableClient.GetEntityAsync<IssueEntity>(partitionKey,rowKey);
+                Response<Announcement> response = await _tableClient.GetEntityAsync<Announcement>(partitionKey, rowKey);
                 return Ok(response.Value);
             }
             catch (RequestFailedException ex)
@@ -74,12 +74,12 @@ namespace storage_api.Controllers
             {
                 return NotFound(new
                 {
-                    message = "Issue not found."
+                    message = "Announement not found."
                 });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex,"Error retrieving issue {PartitionKey}/{RowKey}.",partitionKey,rowKey);
+                _logger.LogError(ex, "Error retrieving announcement {PartitionKey}/{RowKey}.", partitionKey, rowKey);
 
                 return StatusCode(
                     StatusCodes.Status500InternalServerError,
@@ -91,23 +91,21 @@ namespace storage_api.Controllers
             }
         }
 
-
-       
         [HttpPost]
-        public async Task<ActionResult<IssueEntity>> CreateIssue([FromBody] IssueEntity issue)
+        public async Task<ActionResult<IssueEntity>> CreateAnnouncement([FromBody] Announcement announcement)
         {
             try
             {
-                if (issue == null)
+                if (announcement == null)
                 {
                     return BadRequest(new
                     {
-                        message = "Issue data is required."
+                        message = "Announcment data is required."
                     });
                 }
 
                 // Validate required fields
-                if (string.IsNullOrWhiteSpace(issue.Title))
+                if (string.IsNullOrWhiteSpace(announcement.Title))
                 {
                     return BadRequest(new
                     {
@@ -115,7 +113,7 @@ namespace storage_api.Controllers
                     });
                 }
 
-                if (string.IsNullOrWhiteSpace(issue.Location))
+                if (string.IsNullOrWhiteSpace(announcement.Location))
                 {
                     return BadRequest(new
                     {
@@ -123,7 +121,7 @@ namespace storage_api.Controllers
                     });
                 }
 
-                if (string.IsNullOrWhiteSpace(issue.Description))
+                if (string.IsNullOrWhiteSpace(announcement.Description))
                 {
                     return BadRequest(new
                     {
@@ -131,31 +129,31 @@ namespace storage_api.Controllers
                     });
                 }
 
-                if (string.IsNullOrWhiteSpace(issue.IssueCategory))
+                if (string.IsNullOrWhiteSpace(announcement.AnnouncementDate.ToString()))
                 {
                     return BadRequest(new
                     {
-                        message = "Issue category is required."
+                        message = "Announcement date is required."
                     });
                 }
 
-                issue.PartitionKey = "Issues";
-                issue.RowKey = Guid.NewGuid().ToString();
-                issue.Timestamp = null;
-                await _tableClient.AddEntityAsync(issue);
+                announcement.PartitionKey = "Announcements";
+                announcement.RowKey = Guid.NewGuid().ToString();
+                announcement.Timestamp = null;
+                await _tableClient.AddEntityAsync(announcement);
 
                 return CreatedAtAction(
-                    nameof(GetIssue),
+                    nameof(GetAnnouncement),
                     new
                     {
-                        partitionKey = issue.PartitionKey,
-                        rowKey = issue.RowKey
+                        partitionKey = announcement.PartitionKey,
+                        rowKey = announcement.RowKey
                     },
-                    issue);
+                    announcement);
             }
             catch (RequestFailedException ex)
             {
-                _logger.LogError(ex,"Azure Table Storage error while creating issue.");
+                _logger.LogError(ex, "Azure Table Storage error while creating announcement.");
 
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     new
@@ -181,13 +179,12 @@ namespace storage_api.Controllers
         }
 
 
-        
         [HttpPut("{partitionKey}/{rowKey}")]
-        public async Task<ActionResult<IssueEntity>> UpdateIssue(string partitionKey, string rowKey,[FromBody] IssueEntity issue)
+        public async Task<ActionResult<Announcement>> UpdateAnnouncement(string partitionKey, string rowKey, [FromBody] Announcement announcement)
         {
             try
             {
-                if (issue == null)
+                if (announcement == null)
                 {
                     return BadRequest(new
                     {
@@ -195,7 +192,7 @@ namespace storage_api.Controllers
                     });
                 }
 
-                if (string.IsNullOrWhiteSpace(issue.Title))
+                if (string.IsNullOrWhiteSpace(announcement.Title))
                 {
                     return BadRequest(new
                     {
@@ -203,7 +200,7 @@ namespace storage_api.Controllers
                     });
                 }
 
-                if (string.IsNullOrWhiteSpace(issue.Location))
+                if (string.IsNullOrWhiteSpace(announcement.Location))
                 {
                     return BadRequest(new
                     {
@@ -211,7 +208,7 @@ namespace storage_api.Controllers
                     });
                 }
 
-                if (string.IsNullOrWhiteSpace(issue.Description))
+                if (string.IsNullOrWhiteSpace(announcement.Description))
                 {
                     return BadRequest(new
                     {
@@ -219,45 +216,45 @@ namespace storage_api.Controllers
                     });
                 }
 
-                if (string.IsNullOrWhiteSpace(issue.IssueCategory))
+                if (string.IsNullOrWhiteSpace(announcement.AnnouncementDate.ToString()))
                 {
                     return BadRequest(new
                     {
-                        message = "Issue category is required."
+                        message = "Announcement date is required."
                     });
                 }
 
                 // Ensure the keys cannot be changed by the frontend
-                issue.PartitionKey = partitionKey;
-                issue.RowKey = rowKey;
+                announcement.PartitionKey = partitionKey;
+                announcement.RowKey = rowKey;
 
                 // Replace the existing entity
                 await _tableClient.UpdateEntityAsync(
-                    issue,
+                    announcement,
                     ETag.All,
                     TableUpdateMode.Replace);
 
-                return Ok(issue);
+                return Ok(announcement);
             }
             catch (RequestFailedException ex)
                 when (ex.Status == StatusCodes.Status404NotFound)
             {
                 return NotFound(new
                 {
-                    message = "Issue not found."
+                    message = "Announcement not found."
                 });
             }
             catch (RequestFailedException ex)
             {
                 _logger.LogError(
                     ex,
-                    "Azure Table Storage error while updating issue.");
+                    "Azure Table Storage error while updating announcement.");
 
                 return StatusCode(
                     StatusCodes.Status500InternalServerError,
                     new
                     {
-                        message = "Failed to update the issue.",
+                        message = "Failed to update the announcement.",
                         error = ex.Message
                     });
             }
@@ -265,7 +262,7 @@ namespace storage_api.Controllers
             {
                 _logger.LogError(
                     ex,
-                    "Unexpected error while updating issue.");
+                    "Unexpected error while updating announcement.");
 
                 return StatusCode(
                     StatusCodes.Status500InternalServerError,
@@ -278,9 +275,9 @@ namespace storage_api.Controllers
         }
 
 
-     
+
         [HttpDelete("{partitionKey}/{rowKey}")]
-        public async Task<IActionResult> DeleteIssue(string partitionKey, string rowKey)
+        public async Task<IActionResult> DeleteAnnouncement(string partitionKey, string rowKey)
         {
             try
             {
@@ -290,7 +287,7 @@ namespace storage_api.Controllers
 
                 return Ok(new
                 {
-                    message = "Issue deleted successfully."
+                    message = "Announcement deleted successfully."
                 });
             }
             catch (RequestFailedException ex)
@@ -298,12 +295,12 @@ namespace storage_api.Controllers
             {
                 return NotFound(new
                 {
-                    message = "Issue not found."
+                    message = "Announcement not found."
                 });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex,"Error deleting issue {PartitionKey}/{RowKey}.",partitionKey,rowKey);
+                _logger.LogError(ex, "Error deleting announcement {PartitionKey}/{RowKey}.", partitionKey, rowKey);
 
                 return StatusCode(
                     StatusCodes.Status500InternalServerError,

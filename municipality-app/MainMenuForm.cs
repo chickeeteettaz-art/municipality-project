@@ -21,10 +21,8 @@ namespace municipality_app
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Feature coming soon",
-                                    "Coming soon",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+            AnnouncementWindow announcementWindow = new AnnouncementWindow();
+            announcementWindow.Show();
         }
 
         private void materialButton3_Click(object sender, EventArgs e)

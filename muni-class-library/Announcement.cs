@@ -1,13 +1,22 @@
 ﻿
 
+using Azure;
+using Azure.Data.Tables;
+
 namespace muni_class_library
 {
-    public class Announcement
+    public class Announcement:ITableEntity
     {
-        public int AnnouncematId;
-        public string? Title;
-        public string? Description;
-        public DateTime AnnouncementDate;
-        public string? Location;
+        
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+        public DateTimeOffset? Timestamp { get; set; }
+        public int AnnouncementId { get; set; }
+        public ETag ETag { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? Category { get; set; }
+        public DateTime AnnouncementDate { get; set; }
+        public string? Location { get; set; } = string.Empty;
     }
 }
