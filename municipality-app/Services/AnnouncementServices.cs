@@ -19,10 +19,8 @@ namespace municipality_app.Services
         {
             var handler = new HttpClientHandler
             {
-                // Development only - accepts the ASP.NET Core
-                // self-signed HTTPS certificate.
                 ServerCertificateCustomValidationCallback =
-                    HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+                HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
             };
 
             _httpClient = new HttpClient(handler)
@@ -32,9 +30,7 @@ namespace municipality_app.Services
             };
         }
 
-        /// <summary>
-        /// Constructor for dependency injection/testing.
-        /// </summary>
+       
         public AnnouncementServices(HttpClient httpClient)
         {
             _httpClient = httpClient ??
