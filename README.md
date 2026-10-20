@@ -1,82 +1,132 @@
-# municipality-app
+# Municipal Services Application
 
-A small C# WinForms application for community members to interact with their local municipality. It provides three core services: reporting issues, browsing announcements & events, and requesting services. The UI uses MaterialSkin for a modern look-and-feel and the project is split into a WinForms application and a lightweight class library for domain models.
+A small C# Windows Forms application for municipal service requests and local government workflows. The project demonstrates a service request tracking system with search, filtering, status updates, priority management, and a graph-based view of service locations.
+
+## Project overview
+
+This application is designed to help community members and staff manage service requests for municipal issues. It includes:
+
+- Reporting and tracking service requests
+- Searching by request ID, category, location, or status
+- Updating status and appending progress notes
+- Viewing the highest-priority request from a priority queue
+- Displaying a minimum spanning tree for sample service locations
+
+The implementation is intended as a demonstration project and uses in-memory data only. It is not a production-ready municipal management system.
 
 ## Key features
-- Report issues (title, location, description, category) with optional file upload.
-- Service request form with progress tracking and validation.
-- Announcements window (UI available).
-- Simple in-memory storage of submitted reports (List<IssueReport>).
-- File uploads are copied to an "Uploads" folder inside the application's startup path.
+
+- Search and filter requests by ID, category, location, and status
+- Status and priority controls for filtering the table
+- Request tracking by complete ID such as `SR-2026-1001`
+- Update selected request with a new status and progress note
+- Inspect the highest-priority item in the priority queue
+- View the minimum spanning tree (MST) for service locations
+- Sample data for five demonstration requests
 
 ## Stack
+
 - Language: C#
-- Framework / runtime: .NET 10 (TargetFramework: net10.0)
-- UI: Windows Forms (WinForms) with MaterialSkin (MaterialSkin.Controls)
+- UI framework: Windows Forms
+- Runtime: .NET 6+ / .NET 8+ Windows Forms workload
+- Architecture: class library + Windows Forms application
 
-Notable code elements (from the repository)
-- muni-class-library/IssueReport.cs — IssueReport model with IssueId, Title, Location, Description, FilePath, IssueCategory.
-- municipality-app — WinForms project with:
-  - Program.cs — application entry point that runs Form1.
-  - Form1.cs — main window (MaterialForm) with buttons for the three primary services; Service Request button opens ServiceRequestForm.
-  - ServiceRequestForm.cs — form that collects issue/service request details, handles file upload and progress bar validation; stores reports in a List<IssueReport>.
-  - AnnouncementWindow.cs — a MaterialForm ready for announcements UI.
-- File uploads: ServiceRequestForm copies selected files to Path.Combine(Application.StartupPath, "Uploads").
+## Project structure
 
-## Project layout (top-level)
-```
-.muni-class-library/         C# class library with domain models (IssueReport)
-municipality-app/            WinForms application (Program.cs, Form1, ServiceRequestForm, AnnouncementWindow, resources)
-municipality-app.slnx        Solution file (open in Visual Studio)
-README.md                    (this file)
-```
+- `muni_class_library/` — class library containing data models, tree structures, graph logic, and request management
+- `municipality_app/` — Windows Forms application containing the UI and interaction logic
+- `README.md` — project documentation
+- `municipality_app.slnx` — solution file for opening in Visual Studio
+
+## Final project requirements
+
+### Requirements
+
+- Visual Studio 2022 or later
+- .NET 6 or later Windows Forms workload (the supplied `Program.cs` uses `ApplicationConfiguration.Initialize()`)
+- Windows operating system
+
+### Add the files
+
+1. Create a solution with a Class Library project named `muni_class_library` and a Windows Forms App project named `municipality_app`.
+2. Use the same target framework for both projects (for example, `net8.0` and `net8.0-windows` respectively). Set `UseWindowsForms` to `true` in the Windows Forms project.
+3. Add a project reference from `municipality_app` to `muni_class_library`.
+4. Replace the generated `ServiceRequest.cs` class with the class library files provided in the project specification. Add `ServiceRequestStructures.cs`, `ServiceGraph.cs`, and `ServiceRequestManager.cs` to the class library.
+5. Add `MainMenuForm.cs`, `ServiceRequestsWindowForm.cs`, and `ServiceRequestsWindowForm.Designer.cs` to the Windows Forms project. Remove or rename any duplicate `ServiceRequestsWindowForm` class already in your project.
+6. Ensure the Windows Forms project's default namespace is `municipality_app`. Build the solution and run it.
+
+### Use the application
+
+- Select Service Request Status from the main menu.
+- Search by request ID, category, location, or status.
+- Use the status and priority drop-downs to filter the table.
+- Enter a complete request ID such as `SR-2026-1001` and select Track to view details and progress history.
+- Select a row and click Update selected to change the request status and append a progress note.
+- Click Highest priority to inspect the top item in the priority heap.
+- Click View MST to display the minimum spanning tree for the sample service locations.
+
+The five requests are demonstration data held in memory. Changes are lost when the application closes. Replace the seed data with repository/database access for a production implementation.
+
+### Data structures and algorithms
+
+- Basic tree: `BasicTreeNode<T>` represents a hierarchy such as municipal department → category → request type. It is a general-purpose structure and is not used as the main request index.
+- Binary tree: `BinaryTreeNode<T>` defines the left/right node shape used by binary trees.
+- Binary search tree (BST): `BinarySearchTree<T>` inserts and retrieves keys according to ordering. Average operations are O(log n), but a poorly shaped tree can degrade to O(n).
+- AVL tree: `AvlTree<T>` performs rotations after insertions to keep height balanced. Search and insertion are O(log n). The manager maintains request IDs in an AVL index as a demonstration of balanced indexing.
+- Red-black tree: `RedBlackTree<T>` uses node colours and rotations to preserve approximate balance. Search and insertion are O(log n). It is maintained as a second ordered ID index for demonstrating the structure.
+- Heap / priority queue: `RequestPriorityQueue` orders requests by priority and then submission date. Enqueue/dequeue are O(log n), peek is O(1). The queue is a snapshot of priorities at insertion time; re-enqueue or rebuild it when priorities change.
+- Graph: `ServiceGraph` models connections between service locations. Breadth-first search (BFS) visits reachable locations in O(V + E).
+- Minimum spanning tree (MST): Kruskal's algorithm sorts graph edges and uses disjoint sets to select low-cost connections without cycles. Sorting dominates at O(E log E). The result can help illustrate an efficient network of maintenance locations; it is not a route planner for a single vehicle.
+
+### Testing checklist
+
+1. Run the application and confirm that five demo requests display.
+2. Search `SR-2026-1004`; confirm the Road Damage request appears.
+3. Filter status to `Resolved`; confirm `SR-2026-1005` appears.
+4. Track `SR-2026-1001`; confirm its history and current status display.
+5. Select a request, change its status, and confirm the table reflects the change.
+6. Inspect the priority queue and MST output.
+
+### Limitations and next steps
+
+This is a demonstration implementation, not a production municipal case-management system. The BST, AVL, and red-black trees are illustrative indexes; the dictionary provides the direct O(1) average lookup used by the form. The graph contains sample location connections, not live GIS road data. For production, add SQL Server persistence, authentication and authorisation, input validation, audit logging, unit tests, and role-based permissions. Only authorised staff should be able to change a request's status.
 
 ## How to build and run
 
-Prerequisites
-- .NET 10 SDK installed (match the project's TargetFramework net10.0).
-- A Windows machine to run WinForms applications.
-- Optional: Visual Studio (recommended for designers) or the dotnet CLI.
+### Prerequisites
 
-From a fresh clone (dotnet CLI)
+- .NET 10 SDK installed (match the project's target framework)
+- Windows machine to run WinForms applications
+- Optional: Visual Studio 2022 or later
+
+### From a fresh clone
+
 1. Restore and build:
-   - dotnet restore
-   - dotnet build
+   - `dotnet restore`
+   - `dotnet build`
 2. Run the WinForms app:
-   - dotnet run --project municipality-app/municipality-app.csproj
+   - `dotnet run --project municipality_app/municipality_app.csproj`
 
-Or open `municipality-app.slnx` (or the solution/project in Visual Studio) and press F5 / Run.
-
-Notes:
-- Ensure MaterialSkin (NuGet) is available/installed; the code references MaterialSkin and MaterialSkin.Controls.
-- The class library project must be referenced by the WinForms project (the repository contains muni-class-library and municipality-app projects intended to be used together).
+Or open `municipality_app.slnx` (or the solution/project in Visual Studio) and press F5.
 
 ## Usage notes
-- The Issue Report form requires Location, Title, Description, Category, and a real file name to reach 100% progression. The UI:
-  - Enables the upload button only once the Description is filled.
-  - Copies uploaded files into an "Uploads" folder under the application's startup directory.
-  - When the form reaches 100% on the progress bar, the Submit button is enabled and a success message is shown.
-- Submitted requests are added to an in-memory List<IssueReport> (issueReports). There is no persistence to a database or file in the current code—data will be lost when the application exits.
-- Two of the main window buttons currently show a "Feature coming soon" message; AnnouncementWindow exists as a form class and can be extended to show announcements/events.
 
-## Development notes & suggestions
-- Persistence: add simple persistence (JSON file, SQLite, or other DB) if requests must survive application restarts.
-- Announcements & Events: implement data model, UI and persistence; consider a small admin/editor UI for creating announcements.
-- File handling: consider validating file size/type and showing clearer upload progress; ensure permissions for the Uploads folder.
-- Packaging: create an installer or publish profile for easy distribution to Windows users.
+- The service request form requires a valid request ID, priority, and request details.
+- Submitted requests are added to an in-memory collection and will be lost when the application exits.
+- The application is a demonstration of data structures and UI flow rather than a complete production workflow.
 
-## Files of interest
-- muni-class-library/IssueReport.cs — model for reports and service requests.
-- municipality-app/ServiceRequestForm.cs — main logic for the service request workflow (progress logic, validation, file copy).
-- municipality-app/Form1.cs — main menu and entry points to features.
-- municipality-app/AnnouncementWindow.cs — UI shell for announcements.
+## Development notes and suggestions
 
-## Limitations
-- No persistent storage for issue reports (only in-memory List<IssueReport>).
-- Announcements/events functionality is not fully implemented.
-- Uploads are saved locally; no server or remote storage integration is present.
+- Persistence: add simple persistence with JSON, SQLite, or a database if requests must survive application restarts.
+- Announcements and events: implement the necessary models, UI, and persistence if expanded features are required.
+- File handling: consider validating file size and type for uploaded documents.
+- Packaging: create an installer or publish profile for easier distribution to Windows users.
 
 ## Contributing
-- Open an issue or submit a PR to add persistence, complete the announcements/events feature, or improve UX and error handling.
-- If adding persistence, keep backward compatibility with the IssueReport model fields:
-  - IssueId, Title, Location, Description, FilePath, IssueCategory
+
+- Open an issue or submit a PR to improve persistence, complete the announcements or service workflow, or add stronger validation and auditing.
+- Keep backward compatibility when changing request model fields and related logic.
+
+## Summary
+
+This project combines a WinForms-based municipal service request UI with a teaching-focused implementation of several data structures and algorithms, including BSTs, AVL trees, red-black trees, heaps, and graph-based MST generation. It is an effective demonstration of both application design and computer science concepts relevant to municipal service tracking.
